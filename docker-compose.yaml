@@ -1,9 +1,23 @@
 version: '3.8'
 
 services:
+  operations_db:
+    container_name: operations_db
+    build: ./db
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_DATABASE: operations
+      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+
   backend:
     build:
       context: ./back
+    depends_on:
+      operations_db:
+        condition: service_started
     ports:
       - "8080:8080"
 
@@ -12,11 +26,3 @@ services:
       context: ./front
     ports:
       - "3000:3000"
-
-  database:
-    build:
-      context: ./db
-    ports:
-      - "3306:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: root
