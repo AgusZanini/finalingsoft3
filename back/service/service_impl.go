@@ -16,7 +16,7 @@ func NewOperationServiceImpl(operationclient repositories.OperationClient) *Oper
 	}
 }
 
-func (s *OperationServiceImpl) InsertOperation(operationdto dto.OperationDto) (float32, error) {
+func (s *OperationServiceImpl) InsertOperation(operationdto dto.OperationDto) (float64, error) {
 	var operation model.Operation
 
 	operation.Number1 = operationdto.Number1

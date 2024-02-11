@@ -40,7 +40,7 @@ func (o *OperationClientImpl) GetOperationById(id int) (model.Operation, error) 
 	return operation, nil
 }
 
-func (o *OperationClientImpl) InsertOperation(operation model.Operation) (float32, error) {
+func (o *OperationClientImpl) InsertOperation(operation model.Operation) (float64, error) {
 	result := o.Db.Create(&operation)
 	if result.Error != nil {
 		log.Error("Error inserting operation in database")

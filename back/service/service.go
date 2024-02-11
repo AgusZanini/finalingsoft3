@@ -6,5 +6,5 @@ import (
 
 type OperationService interface {
 	GetOperationById(id int) (dto.OperationDto, error)
-	InsertOperation(operationdto dto.OperationDto) (float32, error)
+	InsertOperation(operationdto dto.OperationDto) (float64, error)
 }
