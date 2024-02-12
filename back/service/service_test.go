@@ -9,7 +9,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-// crear de un cliente mock
+// crear un cliente mock
 
 type MockClient struct{}
 
@@ -140,5 +140,4 @@ func TestInsertOperation(t *testing.T) {
 
 	assert.NoError(t, err)
 	assert.Equal(t, expectedresult6, result6)
-
 }
