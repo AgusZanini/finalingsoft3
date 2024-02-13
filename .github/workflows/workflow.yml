@@ -29,6 +29,8 @@ jobs:
       run: |
         pwd
         ls
+        cd ..
+        ls
         go test -v
   publish:
     runs-on: ubuntu-latest
