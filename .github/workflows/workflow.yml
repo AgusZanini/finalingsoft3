@@ -28,6 +28,7 @@ jobs:
     - name: Execute test file
       run: |
         pwd
+        ls
         go test -v
   publish:
     runs-on: ubuntu-latest
