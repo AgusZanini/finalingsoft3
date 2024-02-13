@@ -11,6 +11,11 @@ services:
     environment:
       MYSQL_DATABASE: operations
       MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"] # Prueba de ping a la base de datos
+      interval: 10s  # Intervalo entre pruebas
+      retries: 5     # Número de intentos antes de marcar el contenedor como no saludable
+      timeout: 5s    # Tiempo de espera para cada prueba
 
   backend:
     container_name: backend
@@ -18,7 +23,7 @@ services:
       context: ./back
     depends_on:
       operations_db:
-        condition: service_started
+        condition: service_healthy
     ports:
       - "8080:8080"
 
