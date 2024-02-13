@@ -16,7 +16,7 @@ jobs:
     - name: Build and test
       run: |
         docker-compose up --build -d
-        docker-compose exec back go test -v ./service
+        docker-compose exec backend go test -v ./service
 
   publish:
     needs: build_and_test
