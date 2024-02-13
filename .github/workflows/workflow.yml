@@ -16,6 +16,10 @@ jobs:
     - name: Build images
       run: |
         docker-compose build
+
+    - name: start containers
+      run: |
+        docker-compose up
         
     - name: Set up Go
       uses: actions/setup-go@v2
@@ -24,11 +28,7 @@ jobs:
         
     - name: Execute test file
       run: |
-        pwd
-        ls
-        cd back/service
-        ls
-        go test -v
+        docker exec backend go test -v ./service
 
     - name: Login to DockerHub
       run: |
