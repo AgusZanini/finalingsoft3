@@ -15,7 +15,7 @@ jobs:
 
     - name: Build and test
       run: |
-        docker-compose up build
+        docker-compose build
         docker-compose exec backend go test -v ./service
 
   publish:
@@ -24,12 +24,15 @@ jobs:
 
     steps:
     - name: Login to Docker Hub
-      uses: docker/login-action@v1
-      with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_PASSWORD }}
-
-    - name: Build and push Docker images
       run: |
-        docker-compose build
-        docker-compose push
+        docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
+
+    - name: Tag and push Docker images
+      run: |
+        docker tag backend ${{secrets.DOCKERHUB_USERNAME }}/backend
+        docker tag frontend ${{secrets.DOCKERHUB_USERNAME }}/backend
+        docker tag operations_db ${{secrets.DOCKERHUB_USERNAME }}/operations_db
+        
+        docker push ${{secrets.DOCKERHUB_USERNAME }}/backend
+        docker push ${{secrets.DOCKERHUB_USERNAME }}/frontend
+        docker push ${{secrets.DOCKERHUB_USERNAME }}/operations_db
