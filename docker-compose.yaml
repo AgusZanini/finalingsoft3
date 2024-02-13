@@ -12,10 +12,9 @@ services:
       MYSQL_DATABASE: operations
       MYSQL_ALLOW_EMPTY_PASSWORD: "true"
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"] # Prueba de ping a la base de datos
-      interval: 10s  # Intervalo entre pruebas
-      retries: 5     # Número de intentos antes de marcar el contenedor como no saludable
-      timeout: 5s    # Tiempo de espera para cada prueba
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root","-p root"]
+      timeout: 20s
+      retries: 10
 
   backend:
     container_name: backend
@@ -31,5 +30,8 @@ services:
     container_name: frontend
     build:
       context: ./front
+    depends_on:
+      backend:
+        condition: service_started
     ports:
       - "3000:3000"
