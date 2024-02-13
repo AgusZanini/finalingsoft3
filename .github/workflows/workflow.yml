@@ -27,7 +27,8 @@ jobs:
         
     - name: Execute test file
       run: |
-        ls
+        pwd
+        cd back/service
         go test -v
   publish:
     runs-on: ubuntu-latest
