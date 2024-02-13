@@ -13,6 +13,7 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: "true"
 
   backend:
+    container_name: backend
     build:
       context: ./back
     depends_on:
@@ -22,6 +23,7 @@ services:
       - "8080:8080"
 
   frontend:
+    container_name: frontend
     build:
       context: ./front
     ports:
