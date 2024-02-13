@@ -27,9 +27,6 @@ jobs:
         
     - name: Execute test file
       run: |
-        pwd
-        ls
-        cd ..
         ls
         go test -v
   publish:
