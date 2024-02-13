@@ -26,7 +26,8 @@ jobs:
         go-version: 1.18
         
     - name: Execute test file
-      run: go test -v ./back/service
+      working-directory: ./back/service
+      run: go test -v
   publish:
     runs-on: ubuntu-latest
     needs: test
