@@ -27,7 +27,6 @@ jobs:
         
     - name: Execute test file
       run: |
-        cd ./back/service
         pwd
         go test -v
   publish:
