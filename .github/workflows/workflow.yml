@@ -26,8 +26,8 @@ jobs:
         go-version: 1.18
         
     - name: Execute test file
-      working-directory: ./finalingsoft3/back/service
       run: |
+        cd ./back/service
         pwd
         go test -v
   publish:
