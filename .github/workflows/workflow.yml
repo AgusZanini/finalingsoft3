@@ -19,7 +19,7 @@ jobs:
 
     - name: start containers
       run: |
-        docker-compose up
+        docker-compose up -d
         
     - name: Set up Go
       uses: actions/setup-go@v2
@@ -29,6 +29,10 @@ jobs:
     - name: Execute test file
       run: |
         docker exec backend go test -v ./service
+
+    - name: Stop containers
+      run: |
+        docker-compose down
 
     - name: Login to DockerHub
       run: |
