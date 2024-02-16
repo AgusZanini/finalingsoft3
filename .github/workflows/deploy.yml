@@ -19,8 +19,7 @@ jobs:
 
     - name: Authenticate with Google Container Registry
       run: |
-        echo ${{ secrets.GCP_SA_KEY }} | base64 --decode > key.json
-        gcloud auth activate-service-account --key-file=key.json
+        gcloud auth activate-service-account --key-file=${{ secrets.GCP_SA_KEY }}
         gcloud auth configure-docker
 
     - name: Login to DockerHub
