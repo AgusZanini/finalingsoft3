@@ -49,3 +49,4 @@ jobs:
         docker push ${{ secrets.DOCKERHUB_USERNAME }}/backend:latest
         docker push ${{ secrets.DOCKERHUB_USERNAME }}/frontend:latest
         docker push ${{ secrets.DOCKERHUB_USERNAME }}/operations_db:latest
+        
