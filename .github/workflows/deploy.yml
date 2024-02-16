@@ -38,8 +38,8 @@ jobs:
 
     - name: Tag backend and frontend Docker images
       run: |
-        docker tag backend:latest gcr.io/finalingsoft3/backend:latest
-        docker tag frontend:latest gcr.io/finalingsoft3/frontend:latest
+        docker tag aguszanini/backend:latest gcr.io/finalingsoft3/backend:latest
+        docker tag aguszanini/frontend:latest gcr.io/finalingsoft3/frontend:latest
 
     - name: Push backend and frontend Docker images to Google Container Registry
       run: |
