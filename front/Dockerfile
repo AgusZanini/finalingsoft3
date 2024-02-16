@@ -1,5 +1,7 @@
 FROM node:16
 
+EXPOSE 3000
+
 ADD . /front
 WORKDIR /front
 

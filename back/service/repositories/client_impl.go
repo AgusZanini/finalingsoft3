@@ -16,7 +16,8 @@ type OperationClientImpl struct {
 func NewOperationClientImpl(DBUser string, DBPass string, DBHost string, DBPort int, DBName string) *OperationClientImpl {
 	db, err := gorm.Open("mysql", fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8&parseTime=True", DBUser, DBPass, DBHost, DBPort, DBName))
 	if err != nil {
-		panic(fmt.Sprintf("Error initializing database: %v", err))
+		log.Error(fmt.Sprintf("Error initializing database: %v", err))
+		return &OperationClientImpl{}
 	}
 	return &OperationClientImpl{
 		Db: db,

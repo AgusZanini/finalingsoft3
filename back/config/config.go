@@ -1,9 +1,9 @@
 package config
 
 var (
-	DBHOST = "operations_db"
+	DBHOST = "34.42.214.64"
 	DBPORT = 3306
 	DBNAME = "operations"
 	DBUSER = "root"
-	DBPASS = ""
+	DBPASS = "root"
 )
