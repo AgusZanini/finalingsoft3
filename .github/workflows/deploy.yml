@@ -6,11 +6,10 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        
+      
       - name: Configure gcloud CLI
         uses: google-github-actions/setup-gcloud@v0.5.0
         with:
@@ -44,7 +43,7 @@ jobs:
         run: |
           docker push gcr.io/finalingsoft3/backend:latest
           docker push gcr.io/finalingsoft3/frontend:latest
-      	
+        	
       - name: Import SQL file to Cloud SQL
         run: |
           gcloud sql import sql finalingsoft3bd gs://bd_temp/operations.sql
