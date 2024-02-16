@@ -29,7 +29,7 @@ jobs:
     
     - name: Run Docker db container to extract SQL file
       run: |
-        docker run --rm aguszanini/operations_db:latest sh -c 'ls -la'
+        docker run --rm aguszanini/operations_db:latest sh -c 'cp /docker-entrypoint-initdb.d/operations.sql ./'
 
     - name: Upload SQL file to Cloud Storage
       run: gsutil cp ./operations.sql gs://bd_temp
