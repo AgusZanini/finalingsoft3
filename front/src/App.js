@@ -10,7 +10,7 @@ function App() {
 
   const multiply = async () => {
     try {
-      const response = await axios.post('http://localhost:8080/operation', { number1: num1, number2: num2 });
+      const response = await axios.post('https://backend-fuz7myfmqq-uc.a.run.app/operation', { number1: num1, number2: num2 });
       setResult(response.data);
     } catch (error) {
       console.error(error);
@@ -19,7 +19,7 @@ function App() {
 
   const getOperationById = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/operation/${id}`);
+      const response = await axios.get(`https://backend-fuz7myfmqq-uc.a.run.app/operation/${id}`);
       setOperation(response.data);
     } catch (error) {
       console.error(error);
