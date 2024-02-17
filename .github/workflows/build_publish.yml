@@ -2,8 +2,6 @@ name: CI/CD Workflow
 
 on:
   workflow_dispatch:
-  push:
-    branches: [ "main" ]
 
 jobs:
   build_test_push:
@@ -49,3 +47,4 @@ jobs:
         docker push ${{ secrets.DOCKERHUB_USERNAME }}/backend:latest
         docker push ${{ secrets.DOCKERHUB_USERNAME }}/frontend:latest
         docker push ${{ secrets.DOCKERHUB_USERNAME }}/operations_db:latest
+        
