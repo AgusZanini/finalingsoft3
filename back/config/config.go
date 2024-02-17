@@ -1,7 +1,5 @@
 package config
 
-import "os"
-
 var (
 	DBHOST = "34.42.214.64"
 	DBPORT = 3306
@@ -10,6 +8,7 @@ var (
 	DBPASS = "root"
 )
 
+/*
 func DefinePort() string {
 	port := os.Getenv("PORT")
 	if port == "" {
@@ -17,3 +16,4 @@ func DefinePort() string {
 	}
 	return port
 }
+*/

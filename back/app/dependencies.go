@@ -13,7 +13,9 @@ type Dependencies struct {
 
 func NewDependencies() *Dependencies {
 	operationclient := repositories.NewOperationClientImpl(config.DBUSER, config.DBPASS, config.DBHOST, config.DBPORT, config.DBNAME)
-	operationclient.StartDbEngine()
+	if operationclient != nil {
+		operationclient.StartDbEngine()
+	}
 
 	service := service.NewOperationServiceImpl(operationclient)
 
