@@ -3,6 +3,8 @@ package app
 import (
 	"time"
 
+	"operations/config"
+
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
@@ -19,5 +21,6 @@ func StartApp() {
 	}))
 	deps := NewDependencies()
 	MapUrls(router, deps)
-	_ = router.Run(":8080")
+	port := config.DefinePort()
+	_ = router.Run(":" + port)
 }
