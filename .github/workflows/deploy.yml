@@ -53,7 +53,7 @@ jobs:
         
     - name: Import SQL file to Cloud SQL
       run: |
-        gcloud sql import sql finalingsoft3bd gs://bd_temp/operations.sql
+        gcloud --quiet sql import sql finalingsoft3bd gs://bd_temp/operations.sql
 
     - name: Deploy backend and frontend to Google Cloud Run
       run: |
