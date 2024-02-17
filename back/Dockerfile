@@ -7,5 +7,6 @@ RUN go mod init operations
 RUN go mod tidy
 RUN go build -o operations .
 RUN chmod +x operations
+EXPOSE 8080
 
 CMD ["./operations"]
