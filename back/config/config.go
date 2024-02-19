@@ -1,8 +1,6 @@
 package config
 
-import (
-	"os"
-)
+import "os"
 
 var (
 	DBHOST = os.Getenv("DB_HOST")
