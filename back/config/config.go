@@ -1,11 +1,15 @@
 package config
 
+import (
+	"os"
+)
+
 var (
-	DBHOST = "34.42.214.64"
-	DBPORT = 3306
-	DBNAME = "operations"
-	DBUSER = "root"
-	DBPASS = "root"
+	DBHOST = os.Getenv("INSTANCE_CONNECTION_NAME")
+	DBPORT = os.Getenv("DB_PORT")
+	DBNAME = os.Getenv("DB_NAME")
+	DBUSER = os.Getenv("DB_USER")
+	DBPASS = os.Getenv("DB_PASS")
 )
 
 /*
