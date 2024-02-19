@@ -65,5 +65,5 @@ jobs:
         --allow-unauthenticated \
         --max-instances=15 \
         --add-cloudsql-instances=finalingsoft3bd \
-        --set-env-vars=DB_HOST=${{ secrets.DB_HOST }},DB_PORT=${{ secrets.DB_PORT }},DB_NAME=${{ secrets.DB_NAME }},DB_USER=${{ secrets.DB_USER }},DB_PASS=${{ secrets.DB_PASS }}
+        --set-env-vars=DB_HOST=/cloudsql/finalingsoft3:us-central1:finalingsoft3bd,DB_PORT=${{ secrets.DB_PORT }},DB_NAME=${{ secrets.DB_NAME }},DB_USER=${{ secrets.DB_USER }},DB_PASS=${{ secrets.DB_PASS }}
         gcloud run deploy frontend --image gcr.io/finalingsoft3/frontend:latest --port=3000 --platform managed --region=us-central1 --allow-unauthenticated --max-instances=15
