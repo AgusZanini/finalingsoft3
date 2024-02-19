@@ -57,5 +57,13 @@ jobs:
 
     - name: Deploy backend and frontend to Google Cloud Run
       run: |
-        gcloud run deploy backend --image gcr.io/finalingsoft3/backend:latest --port=8080 --platform managed --region=us-central1 --allow-unauthenticated --max-instances=15 --add-cloudsql-instances=finalingsoft3bd --set-env-vars DB_USER=${{ secrets.DB_USER }}, DB_PASS=${{ secrets.DB_PASS }}
+        gcloud run deploy backend \
+        --image gcr.io/finalingsoft3/backend:latest \
+        --port=8080 \
+        --platform managed \
+        --region=us-central1 \
+        --allow-unauthenticated \
+        --max-instances=15 \
+        --add-cloudsql-instances=finalingsoftbd \
+        --set-env-vars=DB_USER=${{ secrets.DB_USER }},DB_PASS=${{ secrets.DB_PASS }}
         gcloud run deploy frontend --image gcr.io/finalingsoft3/frontend:latest --port=3000 --platform managed --region=us-central1 --allow-unauthenticated --max-instances=15
