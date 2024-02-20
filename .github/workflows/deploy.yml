@@ -50,10 +50,6 @@ jobs:
       run: |
         docker push gcr.io/finalingsoft3/backend:latest
         docker push gcr.io/finalingsoft3/frontend:latest
-
-    - name: Initiate Cloud SQL instance if not initiated
-      run: |
-        gcloud sql instances start ${{ secrets.CLOUD_SQL_INSTANCE_NAME }} --project=${{ secrets.GCP_PROJECT_ID }}
         
     - name: Import SQL file to Cloud SQL
       run: |
