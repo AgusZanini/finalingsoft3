@@ -5,7 +5,7 @@ Scenario('insert_operation',  ({ I }) => {
     I.fillField('#num1', '5');
     I.fillField('#num2', '10');
     I.click('#multiply');
-    I.see('Resultado: 50');
+    I.see('Resultado: 50', {id: 'result'});
 });
 
 /*
