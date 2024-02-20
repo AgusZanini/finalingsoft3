@@ -1,4 +1,4 @@
-name: Build, Unit Test and Publish
+name: Build, run unit tests and publish to dockerhub
 
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  build_test_push:
+  build-test-publish:
     runs-on: ubuntu-latest
 
     steps:
