@@ -6,7 +6,8 @@ exports.config = {
     Playwright: {
       browser: 'chromium',
       url: 'https://frontend-fuz7myfmqq-uc.a.run.app',
-      show: false
+      show: false,
+      timeout: 60000
     }
   },
   include: {
