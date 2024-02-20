@@ -10,12 +10,24 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Configurar Node.js
+    - name: Configure Node.js
       uses: actions/setup-node@v2
       with:
         node-version: '14'
 
-    - name: Ejecutar pruebas de CodeceptJS
+    - name: Install CodeceptJS
+      run: npm install codeceptjs@3.5.13-beta.3
+  
+    - name: Update Dependencies
+      run: npm update
+  
+    - name: Install Dependencies
+      working-directory: ./testIntegracion
+      run: |
+        npm install
+        npx playwright install
+
+    - name: Execute integration tests
       run: |
         cd integration_tests
         npx codeceptjs run --steps
