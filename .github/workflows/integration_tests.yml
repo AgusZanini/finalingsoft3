@@ -31,4 +31,4 @@ jobs:
     - name: Execute integration tests
       working-directory: ./integration_tests
       run: |
-        npx codeceptjs run --headed=false
+        npx codeceptjs run
