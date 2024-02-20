@@ -5,7 +5,6 @@ Scenario('insert_operation',  ({ I }) => {
     I.fillField('#num1', '5');
     I.fillField('#num2', '10');
     I.click('#multiply');
-    I.waitForElement('h3:contains("Resultado: 50")', 5);
     I.see('Resultado: 50', 'h3');
 });
 
