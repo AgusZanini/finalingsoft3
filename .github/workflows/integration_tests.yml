@@ -22,12 +22,13 @@ jobs:
       run: npm update
   
     - name: Install playwright
+      working-directory: ./integration_tests
       run: |
-        cd integration_tests
         npm install
+        npm install playwright@^1.18
         npx playwright install
 
     - name: Execute integration tests
+      working-directory: ./integration_tests
       run: |
-        cd integration_tests
-        npx codeceptjs run --steps
+        npx codeceptjs run
