@@ -28,12 +28,12 @@ function App() {
 
   return (
     <div>
-      <input type="number" value={num1} onChange={e => setNum1(parseFloat(e.target.value))} placeholder="Primer número" />
-      <input type="number" value={num2} onChange={e => setNum2(parseFloat(e.target.value))} placeholder="Segundo número" />
-      <button onClick={multiply}>Multiplicar</button>
+      <input id="num1" type="number" value={num1} onChange={e => setNum1(parseFloat(e.target.value))} placeholder="Primer número" />
+      <input id="num2" type="number" value={num2} onChange={e => setNum2(parseFloat(e.target.value))} placeholder="Segundo número" />
+      <button id="multiply" onClick={multiply}>Multiplicar</button>
       {result && <h3>Resultado: {result}</h3>}
-      <input type="number" value={id} onChange={e => setId(e.target.value)} placeholder="ID de la operación" />
-      <button onClick={getOperationById}>Obtener operación por ID</button>
+      <input id="idinsert" type="number" value={id} onChange={e => setId(e.target.value)} placeholder="ID de la operación" />
+      <button id="getbyid" onClick={getOperationById}>Obtener operación por ID</button>
       {operation && <h3>Operación: {JSON.stringify(operation)}</h3>}
     </div>
   );
