@@ -24,11 +24,7 @@ jobs:
     - name: Install playwright
       run: |
         cd integration_tests
-        npm install --save-dev playwright@^1.18
-        
-    - name: Install playwright browsers
-      run: |
-        cd integration_tests
+        npm install
         npx playwright install
 
     - name: Execute integration tests
