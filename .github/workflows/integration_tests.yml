@@ -18,14 +18,18 @@ jobs:
     - name: Install CodeceptJS
       run: npm install codeceptjs@3.5.13-beta.3
   
-    - name: Update Dependencies
-      run: npm update
-  
     - name: Install Dependencies
+      run: npm ci
+  
+    - name: Install playwright
       run: |
         cd integration_tests
-        npm install
         npm install --save-dev playwright@^1.18
+        
+    - name: Install playwright browsers
+      run: |
+        cd integration_tests
+        npx playwright install
 
     - name: Execute integration tests
       run: |
