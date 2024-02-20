@@ -69,6 +69,7 @@ jobs:
         gcloud run deploy frontend --image gcr.io/finalingsoft3/frontend:latest --port=3000 --platform managed --region=us-central1 --allow-unauthenticated --max-instances=15
 
   integration-tests:
+    needs: deploy
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
