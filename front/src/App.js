@@ -31,10 +31,10 @@ function App() {
       <input id="num1" type="number" value={num1} onChange={e => setNum1(parseFloat(e.target.value))} placeholder="Primer número" />
       <input id="num2" type="number" value={num2} onChange={e => setNum2(parseFloat(e.target.value))} placeholder="Segundo número" />
       <button id="multiply" onClick={multiply}>Multiplicar</button>
-      {result && <h3>Resultado: {result}</h3>}
+      {result && <h3 id="result">Resultado: {result}</h3>}
       <input id="idinsert" type="number" value={id} onChange={e => setId(e.target.value)} placeholder="ID de la operación" />
       <button id="getbyid" onClick={getOperationById}>Obtener operación por ID</button>
-      {operation && <h3>Operación: {JSON.stringify(operation)}</h3>}
+      {operation && <h3 id="operation">Operación: {JSON.stringify(operation)}</h3>}
     </div>
   );
 }
