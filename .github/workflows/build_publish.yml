@@ -1,7 +1,10 @@
-name: CI/CD Workflow
+name: Build, Unit Test and Publish
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   build_test_push:
@@ -24,7 +27,7 @@ jobs:
       with:
         go-version: 1.18
         
-    - name: Execute test file
+    - name: Execute unit tests
       run: |
         docker exec backend go test -v ./service
 
