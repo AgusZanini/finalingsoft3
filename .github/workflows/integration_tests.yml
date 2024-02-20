@@ -22,8 +22,8 @@ jobs:
       run: npm update
   
     - name: Install Dependencies
-      working-directory: ./testIntegracion
       run: |
+        cd integration_tests
         npm install
         npx playwright install
 
