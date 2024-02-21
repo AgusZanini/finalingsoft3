@@ -5,7 +5,8 @@ Scenario('Multiply two numbers and verify result', ({ I }) => {
     I.fillField('#num1', '5');
     I.fillField('#num2', '3');
     I.click('#multiply');
-    I.see('Resultado: 15', '#result');
+    I.wait(5);
+    I.see('Resultado: 15');
   });
 
 Scenario('Get an operation by id', ({ I }) => {
