@@ -2,8 +2,8 @@ Feature('crud');
 
 Scenario('Multiply two numbers and verify result', ({ I }) => {
     I.amOnPage('/');
-    I.fillField('#num1', 5);
-    I.fillField('#num2', 3);
+    I.fillField('#num1', '5');
+    I.fillField('#num2', '3');
     I.click('#multiply');
     I.see('Resultado: 15', '#result');
   });
