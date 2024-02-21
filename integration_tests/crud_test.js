@@ -1,17 +1,15 @@
 Feature('crud');
 
-/*
-Scenario('insert_operation',  ({ I }) => {
-    I.amOnPage("https://frontend-fuz7myfmqq-uc.a.run.app")
-    I.fillField('#num1', '5');
-    I.fillField('#num2', '10');
+Scenario('Multiply two numbers and verify result', ({ I }) => {
+    I.amOnPage('/');
+    I.fillField('#num1', 5);
+    I.fillField('#num2', 3);
     I.click('#multiply');
-    I.see('Resultado: 50', {id: 'result'});
-});
-*/
+    I.see('Resultado: 15', '#result');
+  });
 
-Scenario('get_operation', ({ I }) => {
-    I.amOnPage("https://frontend-fuz7myfmqq-uc.a.run.app")
+Scenario('Get an operation by id', ({ I }) => {
+    I.amOnPage("/")
     I.fillField('#idinsert', '7');
     I.click('#getbyid');
     I.see('Operación: {"Id":7,"number1":4,"number2":3,"result":12}');
