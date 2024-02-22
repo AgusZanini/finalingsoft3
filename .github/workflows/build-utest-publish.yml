@@ -2,9 +2,6 @@ name: Build, run unit tests and publish to dockerhub
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
 
 jobs:
   build-test-publish:
