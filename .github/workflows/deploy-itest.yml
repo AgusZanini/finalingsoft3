@@ -1,4 +1,4 @@
-name: deploy
+name: Deploy and integration tests
 
 on:
   workflow_dispatch:
