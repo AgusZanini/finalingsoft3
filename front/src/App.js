@@ -30,7 +30,7 @@ function App() {
     <div>
       <input id="num1" type="number" value={num1} onChange={e => setNum1(parseFloat(e.target.value))} placeholder="Primer número" />
       <input id="num2" type="number" value={num2} onChange={e => setNum2(parseFloat(e.target.value))} placeholder="Segundo número" />
-      <button id="multiply" onClick={multiply}>Multiplicar</button>
+      <button id="multiply" onClick={multiply}>Multiply</button>
       {result && <h3 id="result">Resultado: {result}</h3>}
       <input id="idinsert" type="number" value={id} onChange={e => setId(e.target.value)} placeholder="ID de la operación" />
       <button id="getbyid" onClick={getOperationById}>Obtener operación por ID</button>

@@ -22,7 +22,7 @@ func (s *OperationServiceImpl) InsertOperation(operationdto dto.OperationDto) (f
 	operation.Number1 = operationdto.Number1
 	operation.Number2 = operationdto.Number2
 
-	operation.Result = operationdto.Number1 * operationdto.Number2
+	operation.Result = operationdto.Number1 / operationdto.Number2
 
 	opresult, err := s.operationclient.InsertOperation(operation)
 	if err != nil {
