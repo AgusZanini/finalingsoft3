@@ -2,6 +2,9 @@ name: CI/CD worflow
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   build-test-publish:
