@@ -1,6 +1,6 @@
 # Proyecto final Ingeniería de Software III
 
-## Objetivo: El objetivo proyecto es automatizar la construccion y el despliegue de una aplicacion, asi como las pruebas unitarias y de integracion.
+**Objetivo**: El objetivo proyecto es automatizar la construccion y el despliegue de una aplicacion, asi como las pruebas unitarias y de integracion.
 
 **Desarrollo**: Para el desarrollo del proyecto se uso una aplicacion simple de desarrollo propio que tiene dos funcionalidades:
 - Multiplicar dos numeros, mostrar el resultado y almacenar la operacion
