@@ -13,6 +13,7 @@ La aplicacion esta constituida por tres partes fundamentales:
 - Frontend: React.js, se encarga de hacer las peticiones necesarias al backend, de mostrar el resultado de nuevas operaciones y de mostrar las operaciones buscadas por su id.
 - Base de datos: Mysql, tiene una tabla `operaciones` que tendra los dos numeros implicados en cada operacion, el resultado y su id correspondiente.
 
-Para el desarrollo del proceso de CI/CD, se opto por usar github actions y se divide en dos worflows:
-- Build and publish: Este worflow se corre cada vez que se haga un commit nuevo en la rama main, se encarga de construir la aplicacion, correr los test unitarios y si estos pasan se publican las imagenes en dockerhub
-- Deploy: Este workflow se corre manualmente, se encarga de hacer el deploy de los servicios y de la base de datos en google cloud, una vez que se hizo el deploy se corren los test de integracion hechos con codeceptjs
+Para el desarrollo del proceso de CI/CD, se opto por usar github actions y se hizo un workflow `ci-cd` donde se tienen los siguientes jobs:
+- build-test-publish: Se encarga de la construccion de la aplicacion, correr los test unitarios y publicar las imagenes de los servicios a dockerhub
+- deploy: Se encarga de desplegar los servicios de backend y frontend en Google Cloud Run y la base de datos en una instancia de Cloud SQL
+- integration-tests: Se encarga de correr los test de integracion usando codeceptjs
